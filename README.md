@@ -1,24 +1,52 @@
-# Online Book Store
+<div align="center">
 
-**Descrição:** Este projeto é uma aplicação web para uma livraria online, permitindo aos usuários navegar por livros, adicionar itens ao carrinho e realizar compras. Admin pode administrar o catálogo de livros, gerenciar pedidos e visualizar estatísticas de vendas.
+# 📚 Online Book Store
 
-## Tecnologias:
+**Uma livraria online para descobrir livros e comprar com facilidade.**
 
-- Java (Spring Boot)
-- MySQL Database
-- Thymeleaf for Frontend
-- Spring Security
-- Hibernate ORM
+Navegue pelo catálogo, adicione livros ao carrinho e realize compras.  
+Na área administrativa, gerencie livros e pedidos e acompanhe estatísticas de vendas.
 
-## Arquitetura Hexagonal:
+</div>
 
-A arquitetura hexagonal é utilizada para separar a lógica de negócios do restante da aplicação, permitindo que a mesma seja testada e mantida de forma mais eficiente.
+---
 
-### Adapters and Ports:
+## 🛠️ Tecnologias
 
-- **Adapters:** Implementam as interfaces de entrada e saída da aplicação, como o controlador web, o repositório de dados, etc.
-- **Ports:** Definem os contratos que os adaptadores devem implementar para se comunicar com a lógica de negócios.
+| Tecnologia | Uso |
+|---|---|
+| ☕ **Java · Spring Boot** | Aplicação |
+| 🗄️ **MySQL** | Banco de dados |
+| 🎨 **Thymeleaf** | Interface web |
+| 🔐 **Spring Security** | Segurança |
+| 🔄 **Hibernate ORM** | Persistência |
+
+## 🧩 Arquitetura
+
+A aplicação utiliza **arquitetura hexagonal** para separar as regras de negócio das demais partes do sistema, facilitando a manutenção e os testes.
+
+| Componente | Responsabilidade |
+|---|---|
+| **Ports (portas)** | Definem os contratos de comunicação com a lógica de negócio. |
+| **Adapters (adaptadores)** | Implementam esses contratos, por exemplo, nos controladores web e repositórios. |
 
 <p align="center">
-  <img src="docs/img.png" alt="img.png" width="500">
+  <img src="docs/img.png" alt="Diagrama da arquitetura hexagonal" width="560"/>
 </p>
+
+## 🗂️ Estrutura do projeto
+
+```text
+online-book-store/
+├── src/
+│   ├── main/
+│   │   ├── java/com/dev/jorge/onlinebookstore/
+│   │   │   ├── application/      # Lógica de negócios
+│   │   │   ├── domain/           # Entidades e interfaces do domínio
+│   │   │   ├── adapters/         # Adaptadores de entrada e saída
+│   │   │   └── infrastructure/   # Configurações, mapeadores e segurança
+│   │   └── resources/             # Configurações, templates e recursos estáticos
+│   └── test
+│       └── java/com/dev/jorge/onlinebookstore/ # Testes unitários e de integração
+└── docs/                          # Documentação, diagramas e imagens
+```
